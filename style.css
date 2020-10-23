@@ -1,0 +1,90 @@
+/*******************************************
+ *******************************************
+ *
+ *
+ *
+ * This document contains all the
+ * styling for the game.
+ *
+ *
+ /*******************************************
+ *******************************************
+ *
+ * ======= INDEX PAGE CSS
+ *
+ * 00. common & reset css
+ * 01.
+ * 02.
+ * 03.
+ * 04.
+ * 05.
+ * 06.
+ * 07.
+ * 08.
+/*****************************
+ *   00. common & reset css
+ *****************************
+ *
+ */
+* {
+    padding:0;
+    margin: 0;
+    color:white;
+}
+body {
+    height: 100vh;
+        background: #1b1b1b;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+#cpu-character-section {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+#user-character-section{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+
+
+.user-character {
+
+    /* padding-top: 20rem; */
+}
+.cpu-character {
+    /* padding-top: 10rem; */
+}
+
+.character-img {
+    width: 150px;
+}
+.user-character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#score-board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#game-container {
+    padding: 100px 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.golemMove {
+    display: flex;
+    padding: 0px;
+}
+
