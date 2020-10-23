@@ -46,20 +46,33 @@
 
 
 
+// let golemBtn = document.querySelector('.golem-attack-button');
+// golemBtn.addEventListener('click', () => {
+
+//     let golemMove = document.querySelector('.golem-img');
+
+
+
+//         if( golemMove.style.paddingBottom = '0rem') {
+//             golemMove.style.paddingBottom = '20rem';
+//              console.log('attack, it works')
+//         }
+
+//         else {
+//             golemMove.style.paddingBottom = '0rem'
+//               console.log('retreat, it works')
+//         }
+// });
+
+
 let golemBtn = document.querySelector('.golem-attack-button');
-golemBtn.addEventListener('click', () => {
 
+golemBtn.addEventListener('mousedown', () => {
     let golemMove = document.querySelector('.golem-img');
+    golemMove.style.paddingBottom = '20rem';
+});
 
-
-
-        if( golemMove.style.paddingBottom = '0rem') {
-            golemMove.style.paddingBottom = '20rem';
-             console.log('attack, it works')
-        }
-
-        else {
-            golemMove.style.paddingBottom = '0rem'
-              console.log('retreat, it works')
-        }
+golemBtn.addEventListener('mouseup', () => {
+    let golemMove = document.querySelector('.golem-img');
+    golemMove.style.paddingBottom = '0rem';
 });
