@@ -14,6 +14,20 @@
 // console.log(choiceArray[cpuChoice]);
 // ////---------------------------------------------------
 // console.log(`--------------------------------------------------`);
+// ////
+// ////
+// ////
+// ////
+// ////------------------------------------character movement proto type
+// let golemBtn = document.querySelector('.golem-attack-button');
+
+// golemBtn.addEventListener('click', () => {
+//     let golemMove = document.querySelector('.golem-img');
+//     console.log(`--------------------------------------------------`);
+//     console.log('it works');
+//     golemMove.style.paddingBottom = '20rem';
+//     console.log(`--------------------------------------------------`);
+// });
 // //////////////////////Dont Touch this code- this is the safe playground section
 
 // // function userChoice(){
@@ -30,19 +44,22 @@
 
 ////-----------------------------------I am currently working below here
 
-function userCharacterMove() {
-let golemAtkBtn = document.getElementsByClassName('golem-attack-button');
-var golemMove =document.getElementsByClassName('golem-move');
 
-let archerAtkBtn = document.getElementsByClassName('archer-attack-button');
-let knightAtkBtn = document.getElementsByClassName('knight-attack-button');
-let ninjaAtkBtn = document.getElementsByClassName('ninja-attack-button');
 
-	if(golemMove.style.paddingBottom = "0px"){
-		console.log('it works')
-	}else {
-		console.log('it doesnt work')
-	}
+let golemBtn = document.querySelector('.golem-attack-button');
+golemBtn.addEventListener('click', () => {
 
-}
+    let golemMove = document.querySelector('.golem-img');
 
+
+
+        if( golemMove.style.paddingBottom = '0rem') {
+            golemMove.style.paddingBottom = '20rem';
+             console.log('attack, it works')
+        }
+
+        else {
+            golemMove.style.paddingBottom = '0rem'
+              console.log('retreat, it works')
+        }
+});

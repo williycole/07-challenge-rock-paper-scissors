@@ -63,6 +63,12 @@ body {
 .character-img {
     width: 150px;
 }
+
+.golem-img {
+    display: flex;
+    padding: 0rem;
+}
+
 .user-character {
     display: flex;
     flex-direction: column;
@@ -83,8 +89,4 @@ body {
     align-items: center;
 }
 
-.golemMove {
-    display: flex;
-    padding: 0px;
-}
 
