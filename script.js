@@ -52,9 +52,11 @@
 
 
 function gameSet(){
-let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
+// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
+let choiceArray = ['ninja','golem', 'archer', 'knight'];
 
 var isMousedown = false;
+let cpuChoice = (Math.ceil(Math.random(1)*3));
 
 let golemBtn = document.querySelector('.golem-attack-button');
 let archerBtn = document.querySelector('.archer-attack-button');
@@ -66,9 +68,9 @@ let archerImg = document.querySelector('.archer-img');
 let knightImg = document.querySelector('.knight-img');
 let ninjaImg = document.querySelector('.ninja-img');
 
-        golemBtn.addEventListener('mousedown', () => golemImg.style.paddingBottom = '20rem', isMousedown = true)
+//// moving the usercharacters
+        golemBtn.addEventListener('mousedown', () =>  golemImg.style.paddingBottom = '20rem', isMousedown === true)
         golemBtn.addEventListener('mouseup', () => golemImg.style.paddingBottom = '0rem', isMousedown = false)
-
 
 
 
@@ -86,6 +88,23 @@ let ninjaImg = document.querySelector('.ninja-img');
 
         ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '20rem', isMousedown = true)
         ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem', isMousedown = false)
+
+
+        //// testing calling function
+        // maybe check if button was clicked somehow?
+        // this funciton can be used to make the other pecies fire off for the cpu characters and compare who is who and who defeats who
+        function testCall(){
+        let atkBtn = document.querySelector('.attack-button');
+            atkBtn.addEventListener('mousedown', () => console.log('it work yo'));
+
+            golemBtn.addEventListener('mousedown', () => console.log('golem button works'))
+            archerBtn.addEventListener('mousedown', () => console.log('archer button works'))
+            knightBtn.addEventListener('mousedown', () => console.log('knight button works'))
+            ninjaBtn.addEventListener('mousedown', () => console.log('ninja button works'))
+
+        }
+        testCall()
+
 }
 gameSet();
 
