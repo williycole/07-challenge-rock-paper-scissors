@@ -49,60 +49,45 @@
 // }
 
 ////-----------------------------------I am currently working below here
+
+
 function gameSet(){
 let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
+
+var isMousedown = false;
+
 let golemBtn = document.querySelector('.golem-attack-button');
 let archerBtn = document.querySelector('.archer-attack-button');
 let knightBtn = document.querySelector('.knight-attack-button');
 let ninjaBtn = document.querySelector('.ninja-attack-button');
 
-if(){
-    let golemImg = document.querySelector('.golem-img');
-    golemBtn.addEventListener('mousedown', () => golemImg.style.paddingBottom = '20rem')
-    golemBtn.addEventListener('mouseup', () => golemImg.style.paddingBottom = '0rem')
+let golemImg = document.querySelector('.golem-img');
+let archerImg = document.querySelector('.archer-img');
+let knightImg = document.querySelector('.knight-img');
+let ninjaImg = document.querySelector('.ninja-img');
+
+        golemBtn.addEventListener('mousedown', () => golemImg.style.paddingBottom = '20rem', isMousedown = true)
+        golemBtn.addEventListener('mouseup', () => golemImg.style.paddingBottom = '0rem', isMousedown = false)
+
+
+
+
+        archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '20rem', isMousedown = true)
+        archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem', isMousedown = false)
+
+
+
+
+        knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '20rem', isMousedown = true)
+        knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem', isMousedown = false)
+
+
+
+
+        ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '20rem', isMousedown = true)
+        ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem', isMousedown = false)
 }
-
-else if(){
-     let archerImg = document.querySelector('.archer-img');
-    archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '20rem')
-    archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem')
-}
-
-else if(){
-    let knightImg = document.querySelector('.knight-img');
-    knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '20rem')
-    knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem')
-}
-
-else {
-    let ninjaImg = document.querySelector('.ninja-img');
-    ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '20rem')
-    ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem')
-}
-
-
-
-
-
-
-
-
-/*
-Psuedo code,
-if golem button clicked do all thats here {
-}else if archer button clicked do all thats here, and so on....
-*/
-
-
-    // you are gonna have to map out the buttons with clicks with if statements
-//     if(golemBtn === golemBtn.addEventListener('mousedown')) {
-//         console.log('it works');
-//     }
-}
-gameSet()
-
-
-
+gameSet();
 
 
 
