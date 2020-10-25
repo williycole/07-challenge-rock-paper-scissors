@@ -31,6 +31,16 @@
     margin: 0;
     color:white;
 }
+
+html {
+
+--light-cornflower-blue: #8ecae6ff;
+--blue-green: #219ebcff;
+--prussian-blue: #023047ff;
+--honey-yellow: #ffb703ff;
+--orange: rgb(78, 72, 66);
+}
+
 body {
     height: 100vh;
         background: #1b1b1b;
@@ -39,19 +49,17 @@ body {
         align-items: center;
 }
 
-#cpu-character-section {
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
+
+
+
+/* Character Styling */
+.character-size-user {
+    width: 150px;
 }
 
-#user-character-section{
-    display: flex;
-    justify-content: end;
-    align-items: flex-end;
+.character-size-cpu {
+    width: 150px;
 }
-
-
 .user-character {
 
     /* padding-top: 20rem; */
@@ -59,21 +67,58 @@ body {
 .cpu-character {
     /* padding-top: 10rem; */
 }
-
-.character-img {
-    width: 150px;
-}
-
-.golem-img {
+/* User Character Movement Classes */
+#user-character-section{
     display: flex;
-    padding: 0rem;
+    justify-content: end;
+    align-items: flex-end;
 }
+    .golem-img {
+        display: flex;
+        padding: 0rem;
+    }
 
-.user-character {
+    .archer-img {
+        display: flex;
+        padding: 0rem;
+    }
+
+    .knight-img {
+        display: flex;
+        padding: 0rem;
+    }
+
+    .ninja-img {
+        display: flex;
+        padding: 0rem;
+    }
+
+    .user-character {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+/* Computer Character Movement Classes */
+#cpu-character-section {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* these two cause troulbe with padding-top */
+    /* justify-content: end;
+    align-items: flex-end; */
 }
+    .cpu-golem-img {
+        display: flex;
+        padding-top: 0rem;
+    }
+    .cpu-archer-img {
+        display: flex;
+        padding-top: 0rem;
+    }
+    .cpu-knight {
+        display: flex;
+        padding-top: 0rem;
+    }
+
+
 #score-board {
     display: flex;
     flex-direction: row;
@@ -89,4 +134,13 @@ body {
     align-items: center;
 }
 
+.attack-button {
+    border: .5rem solid var(--prussian-blue);
+    background-color:var(--honey-yellow) ;
+    padding: 1.5rem;
+    margin: 1rem;
+    color: var(--prussian-blue);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
 

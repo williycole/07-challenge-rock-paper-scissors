@@ -24,7 +24,7 @@
 
 // golemBtn.addEventListener('mousedown', () => {
 //     let golemMove = document.querySelector('.golem-img');
-//     golemMove.style.paddingBottom = '20rem';
+//     golemMove.style.paddingBottom = '5rem';
 //     ////make computers choice pic in here as well and move
 //     let cpuChoice = (Math.ceil(Math.random(1)*3));
 // 	console.log(choiceArray[cpuChoice]);
@@ -52,12 +52,10 @@
 
 
 function gameSet(){
-// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
-let choiceArray = ['ninja','golem', 'archer', 'knight'];
+//// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
+let characterArray = ['ninja','golem', 'archer', 'knight'];
 
-var isMousedown = false;
-let cpuChoice = (Math.ceil(Math.random(1)*3));
-
+////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
 let archerBtn = document.querySelector('.archer-attack-button');
 let knightBtn = document.querySelector('.knight-attack-button');
@@ -68,42 +66,62 @@ let archerImg = document.querySelector('.archer-img');
 let knightImg = document.querySelector('.knight-img');
 let ninjaImg = document.querySelector('.ninja-img');
 
-//// moving the usercharacters
-        golemBtn.addEventListener('mousedown', () =>  golemImg.style.paddingBottom = '20rem', isMousedown === true)
-        golemBtn.addEventListener('mouseup', () => golemImg.style.paddingBottom = '0rem', isMousedown = false)
+////User Character movement Controls
+golemBtn.addEventListener('mousedown', () =>  golemImg.style.paddingBottom = '5rem');
+golemBtn.addEventListener('mouseup', () => golemImg.style.paddingBottom = '0rem');
 
+archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '5rem');
+archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
+knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '5rem');
+knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
-        archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '20rem', isMousedown = true)
-        archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem', isMousedown = false)
+ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '5rem');
+ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem');
 
+    function moveCpuCharacter(){
+        //Computer movement Controls
+        let cpuChoiceCtrl = (Math.ceil(Math.random(1)*3));
+        let cpuChoice = characterArray[cpuChoiceCtrl];
 
+        ////Computer querySelectors
+        let cpuGolemImg = document.querySelector('.cpu-golem-img');
+        let cpuArcherImg = document.querySelector('.cpu-archer-img');
+        let cpuKnightImg = document.querySelector('.cpu-knight-img');
 
-
-        knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '20rem', isMousedown = true)
-        knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem', isMousedown = false)
-
-
-
-
-        ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '20rem', isMousedown = true)
-        ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem', isMousedown = false)
-
-
-        //// testing calling function
-        // maybe check if button was clicked somehow?
-        // this funciton can be used to make the other pecies fire off for the cpu characters and compare who is who and who defeats who
-        function testCall(){
-        let atkBtn = document.querySelector('.attack-button');
-            atkBtn.addEventListener('mousedown', () => console.log('it work yo'));
-
-            golemBtn.addEventListener('mousedown', () => console.log('golem button works'))
-            archerBtn.addEventListener('mousedown', () => console.log('archer button works'))
-            knightBtn.addEventListener('mousedown', () => console.log('knight button works'))
-            ninjaBtn.addEventListener('mousedown', () => console.log('ninja button works'))
+        // gets choices and moves images for computer
+        if(cpuChoiceCtrl == 1){
+            console.log(characterArray[1]);
+            console.log(cpuChoice);
+            cpuGolemImg.style.paddingTop = '5rem';
+            golemBtn.addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
 
         }
-        testCall()
+        else if(cpuChoiceCtrl == 2){
+            console.log(characterArray[2]);
+            console.log(cpuChoice);
+            cpuArcherImg.style.paddingTop = '5rem';
+            archerBtn.addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
+
+        }
+        else {
+            console.log(characterArray[3]);
+            console.log(cpuChoice);
+            cpuKnightImg.style.paddingTop = '5rem';
+            knightBtn.addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
+        }
+    }
+    golemBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
+    archerBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
+    knightBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
+    ninjaBtn .addEventListener('mousedown', () =>   moveCpuCharacter());
+
+
+
+
+
+
+
 
 }
 gameSet();
@@ -116,46 +134,3 @@ gameSet();
 
 
 
-
-
-
-
-
-
-
-
-
-
-////-----------------------------------copy for testing
-
-/////function gameSet(){
-/////    let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
-/////    let golemBtn = document.querySelector('.golem-attack-button');
-/////    let archerBtn = document.querySelector('.archer-attack-button');
-/////    let knightBtn = document.querySelector('.knight-attack-button');
-/////    let ninjaBtn = document.querySelector('.ninja-attack-button');
-/////
-/////
-/////        let golemImg = document.querySelector('.golem-img');
-/////        golemBtn.addEventListener('mousedown', () => golemImg.style.paddingBottom = '20rem')
-/////        golemBtn.addEventListener('mouseup', () => golemImg.style.paddingBottom = '0rem')
-/////
-/////
-/////
-/////         let archerImg = document.querySelector('.archer-img');
-/////        archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '20rem')
-/////        archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem')
-/////
-/////
-/////
-/////        let knightImg = document.querySelector('.knight-img');
-/////        knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '20rem')
-/////        knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem')
-/////
-/////
-/////
-/////        let ninjaImg = document.querySelector('.ninja-img');
-/////        ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '20rem')
-/////        ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem')
-/////}
-/////gameSet();
