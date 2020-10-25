@@ -61,7 +61,7 @@ body {
     width: 150px;
 }
 .user-character {
-
+    padding-bottom: 5rem;
     /* padding-top: 20rem; */
 }
 .cpu-character {
@@ -106,15 +106,15 @@ body {
     align-items: flex-end; */
 }
     .cpu-golem-img {
-        display: flex;
+        display: none;
         padding-top: 0rem;
     }
     .cpu-archer-img {
-        display: flex;
+        display: none;
         padding-top: 0rem;
     }
-    .cpu-knight {
-        display: flex;
+    .cpu-knight-img {
+        display: none;
         padding-top: 0rem;
     }
 
@@ -126,8 +126,14 @@ body {
 }
 
 #game-container {
-    padding: 100px 50px;
+    /* padding: 100px 50px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+    padding: 150px 80px;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
