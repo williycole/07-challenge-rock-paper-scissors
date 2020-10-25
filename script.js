@@ -67,16 +67,16 @@ let knightImg = document.querySelector('.knight-img');
 let ninjaImg = document.querySelector('.ninja-img');
 
 ////User Character movement Controls
-golemBtn.addEventListener('mousedown', () =>  golemImg.style.marginBottom = '20rem');
+golemBtn.addEventListener('mousedown', () =>  golemImg.style.marginBottom = '13rem');
 golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
-archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '20rem');
+archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '13rem');
 archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
-knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '20rem');
+knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '13rem');
 knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
-ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '20rem');
+ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '13rem');
 ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem');
 
     function moveCpuCharacter(){
@@ -94,20 +94,20 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         if(cpuChoiceCtrl === 1 ){
             // console.log(characterArray[1]);
             console.log(cpuChoice);
-            cpuGolemImg.style.display = 'flex';
-            addEventListener('mouseup', () =>   cpuGolemImg.style.display = 'none');
+            cpuGolemImg.style.paddingTop = '13rem';
+            addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
 
         }
         else if(cpuChoiceCtrl === 2){
             console.log(cpuChoice);
-            cpuArcherImg.style.display = 'flex';
-            addEventListener('mouseup', () =>   cpuArcherImg.style.display = 'none');
+            cpuArcherImg.style.paddingTop = '13rem';
+            addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
 
         }
         else {
             console.log(cpuChoice);
-            cpuKnightImg.style.display = 'flex';
-            addEventListener('mouseup', () => cpuKnightImg.style.display = 'none');
+            cpuKnightImg.style.paddingTop = '13rem';
+            addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
         }
     }
     golemBtn.addEventListener('mousedown', () =>   moveCpuCharacter());

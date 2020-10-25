@@ -60,18 +60,66 @@ body {
 .character-size-cpu {
     width: 150px;
 }
+
+
 .user-character {
-    padding-bottom: 5rem;
+    /* padding-bottom: 5rem; */
     /* padding-top: 20rem; */
 }
 .cpu-character {
     /* padding-top: 10rem; */
 }
+
+
+
+
+/*  */
+#game-container {
+    /* padding: 100px 50px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; */
+
+    /* padding: 150px 80px; */
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#all-characters-container {
+    display: flex;
+    padding: 100px;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: space-between;
+}
+
+#atk-btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.attack-button {
+    border: .5rem solid var(--prussian-blue);
+    background-color:var(--honey-yellow) ;
+    padding: 1.5rem;
+    margin: 1rem;
+    color: var(--prussian-blue);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+
+}
+
 /* User Character Movement Classes */
 #user-character-section{
     display: flex;
     justify-content: end;
     align-items: flex-end;
+    /* padding-bottom: 150px; */
 }
     .golem-img {
         display: flex;
@@ -101,20 +149,19 @@ body {
 /* Computer Character Movement Classes */
 #cpu-character-section {
     display: flex;
-    /* these two cause troulbe with padding-top */
-    /* justify-content: end;
-    align-items: flex-end; */
+    justify-content: center;
+    /* padding-bottom: 100px; */
 }
     .cpu-golem-img {
-        display: none;
+        /* display: none; */
         padding-top: 0rem;
     }
     .cpu-archer-img {
-        display: none;
+        /* display: none; */
         padding-top: 0rem;
     }
     .cpu-knight-img {
-        display: none;
+        /* display: none; */
         padding-top: 0rem;
     }
 
@@ -125,28 +172,5 @@ body {
     justify-content: space-evenly;
 }
 
-#game-container {
-    /* padding: 100px 50px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; */
-    padding: 150px 80px;
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.attack-button {
-    border: .5rem solid var(--prussian-blue);
-    background-color:var(--honey-yellow) ;
-    padding: 1.5rem;
-    margin: 1rem;
-    color: var(--prussian-blue);
-    font-size: 1.2rem;
-    text-transform: uppercase;
-}
 
