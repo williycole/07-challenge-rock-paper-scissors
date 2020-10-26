@@ -1,56 +1,3 @@
-// //////////////////////Dont Touch this code- this is the safe playground section
-// console.log(`----------------safe playground code, don't touch`);
-// //-----------------------------------------CHOICE ARRAY
-// //array for both user and cpu choices
-// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
-// //  console.log(choiceArray[0]); // boom check
-// //-----------------------------------------------------
-
-// ////------------------------------------CPU CHOICE CODE
-// let cpuChoice = (Math.ceil(Math.random(1)*3));
-// 	console.log(cpuChoice);
-
-// ////cpu choice helper function-- MAYBE MAKE HELPER FUNCTION
-// console.log(choiceArray[cpuChoice]);
-// ////---------------------------------------------------
-// ////
-// ////
-// ////
-// ////
-// ////------------------------------------character movement prototype
-
-// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
-// let golemBtn = document.querySelector('.golem-attack-button');
-
-// golemBtn.addEventListener('mousedown', () => {
-//     let golemMove = document.querySelector('.golem-img');
-//     golemMove.style.paddingBottom = '5rem';
-//     ////make computers choice pic in here as well and move
-//     let cpuChoice = (Math.ceil(Math.random(1)*3));
-// 	console.log(choiceArray[cpuChoice]);
-// });
-
-// golemBtn.addEventListener('mouseup', () => {
-//     let golemMove = document.querySelector('.golem-img');
-//     golemMove.style.paddingBottom = '0rem';
-//     ////decide in here who won and update, and make computer choice move back
-// });
-// ////---------------------------------------------------
-// console.log(`--------------------------------------------------`);
-// ////
-// ////
-// ////
-// ////
-// // //////////////////////Dont Touch this code- this is the safe playground section
-
-// function userChoice(){
-// }
-// function gameMechanics(){
-// }
-
-////-----------------------------------I am currently working below here
-
-
 function gameSet(){
 let characterArray = ['ninja','golem', 'archer', 'knight'];
 let userChrArray = [];
@@ -74,7 +21,7 @@ golemBtn.addEventListener('mousedown', () => {
     golemImg.style.marginBottom = '13rem'
     let golemAtk = characterArray[1];
     userChrArray.unshift(golemAtk);
-    console.log(`This is the users choice array ${userChrArray}`);
+    // console.log(`This is the users choice array ${userChrArray}`);
 });
 golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
@@ -82,7 +29,7 @@ archerBtn.addEventListener('mousedown', () => {
    archerImg.style.paddingBottom = '13rem'
    let archerAtk = characterArray[2];
    userChrArray.unshift(archerAtk);
-   console.log(`This is the users choice array ${userChrArray}`);
+//    console.log(`This is the users choice array ${userChrArray}`);
 });
 archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
@@ -90,7 +37,7 @@ knightBtn.addEventListener('mousedown', () => {
     knightImg.style.paddingBottom = '13rem'
     let knightAtk = characterArray[3];
     userChrArray.unshift( knightAtk);
-    console.log(`This is the users choice array ${userChrArray}`);
+    // console.log(`This is the users choice array ${userChrArray}`);
 });
 knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
@@ -98,7 +45,7 @@ ninjaBtn.addEventListener('mousedown', () => {
     ninjaImg.style.paddingBottom = '13rem'
     let ninjaAtk = characterArray[0];
     userChrArray.unshift(ninjaAtk);
-    console.log(`This is the users choice array ${userChrArray}`);
+    // console.log(`This is the users choice array ${userChrArray}`);
 });
 ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem');
 
@@ -120,7 +67,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             cpuGolemImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
-            console.log(`This is the computers choice array ${cpuChrArray}`);
+            // console.log(`This is the computers choice array ${cpuChrArray}`);
             compareAndUpdate();
         }
         else if(cpuChoiceCtrl === 2){
@@ -128,7 +75,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             cpuArcherImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
-            console.log(`This is the computers choice array ${cpuChrArray}`);
+            // console.log(`This is the computers choice array ${cpuChrArray}`);
             compareAndUpdate();
         }
         else {
@@ -136,7 +83,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             cpuKnightImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
-            console.log(`This is the computers choice array ${cpuChrArray}`);
+            // console.log(`This is the computers choice array ${cpuChrArray}`);
             compareAndUpdate();
         }
     }
@@ -145,29 +92,34 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
     knightBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
     ninjaBtn .addEventListener('mousedown', () =>   moveCpuCharacter());
 
-
-    let characterCompareArray = {
-        golem: {weakTo: 'Archer', strongTo: 'Knight'},
-        archer: {weakTo: 'Knight', strongTo: 'Golem'},
-        knight: {weakTo: 'Golem', strongTo: 'Archer'},
-        ninja: {strongTo:'Golem Archer Knight'}
-    }
-
+//// let characterArray = ['ninja','rock', 'paper', 'scissors'];
+//// let characterArray = ['ninja','golem', 'archer', 'knight'];
     function compareAndUpdate(){
-        if (characterCompareArray[userChrArray[0]].strongTo === cpuChrArray[0]) {
-            // I won
-           console.log('You won')
-        }
+        if (userChrArray[0] === cpuChrArray[0]) {
+            console.log(`Its a tie!!!!`)
+        }  // computer wins
+        else if (userChrArray[0] === "knight" && cpuChrArray[0] === "golem") {
+            console.log(`Users ${userChrArray[0]} was slain by the opponents ${cpuChrArray[0]}`);
+        } else if (userChrArray[0] === "golem" && cpuChrArray[0] === "archer") {
+            console.log(`Users ${userChrArray[0]} was slain by the opponents ${cpuChrArray[0]}`);
+        } else if (userChrArray[0] === "archer" && cpuChrArray[0] === "knight") {
+            console.log(`Users ${userChrArray[0]} was slayed the opponents ${cpuChrArray[0]}`);
+        }  //user wins
+        else if (userChrArray[0] === "golem" && cpuChrArray[0] === "knight") {
+            console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
+        } else if (userChrArray[0] === "archer" && cpuChrArray[0] === "golem") {
+            console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
+        } else if (userChrArray[0] === "knight" && cpuChrArray[0] === "archer") {
+            console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
 
-        else if (characterCompareArray[userChrArray[0]].weakTo === cpuChrArray[0]) {
-            // I Lost
-            console.log('You lost')
-        }
-        else {
-            console.log(`DRAW! You picked ${userChrArray[0]}, your opponent picked ${cpuChrArray[0]}.`)
-        }
+
+        } //users ninja wins aLl
+        else if (userChrArray[0] === "ninja" ) {
+            console.log(`Game Won, ${userChrArray[0]} wins all!`)
+        }else {
+            console.log('wut...')
+         }
     }
-
 }
 gameSet();
 
