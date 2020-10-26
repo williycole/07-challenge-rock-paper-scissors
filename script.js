@@ -14,6 +14,29 @@ function scrollMenu() {
 }
 
 
+
+
+
+////Ninja Cheat Code Section
+
+
+
+
+
+
+////Get user name
+function getName() {
+    let setName = document.querySelector('#set-name');
+    let getName = document.querySelector('#get-name').value;
+    setName.innerHTML = getName;
+}
+// const getName = document.querySelector('#start-game');
+// getName.addEventListener('click', ()=> {
+//     let setUsrName = document.querySelector('#user-name-placeholder');
+//     let usrName = document.querySelector('#user-name').nodeValue;
+//     setUsrName.innerHTML = usrName;
+// });
+
 // All code for the game
 function gameSet(){
 let characterArray = ['ninja','golem', 'archer', 'knight'];
@@ -22,7 +45,7 @@ let cpuChrArray = [];
 let userScore = 0;
 let cpuScore = 0;
 
-////Ninja Cheat Code Section
+
 
 
 

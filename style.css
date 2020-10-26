@@ -50,6 +50,9 @@ body {
         flex-direction: column;
         align-items: center;
 }
+input {
+    color: #1b1b1b;
+}
 /*****************************
  *   01.nav & game directions
  *****************************
