@@ -52,8 +52,31 @@
 
 
 function gameSet(){
-//// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
 let characterArray = ['ninja','golem', 'archer', 'knight'];
+let userChrArray = [];
+let cpuChrArray = [];
+let userScore = 0;
+let cpuScore = 0;
+
+let characterCompareArray = {
+    Golem: {weakTo: 'Archer', strongTo: 'Knight'},
+    Archer: {weakTo: 'Knight', strongTo: 'Golem'},
+    Knight: {weakTo: 'Golem', strongTo: 'Archer'},
+    Ninja: {strongTo:'Golem Archer Knight'}
+}
+
+function compareAndUpdate(){
+    if (weapons[myChoice].strongTo === enemyChoice) {
+        // I won
+        return;
+    }
+
+    if (weapons[myChoice].weakTo === enemyChoice) {
+        // I Lost
+        return;
+    }
+}
+
 
 ////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
@@ -67,20 +90,42 @@ let knightImg = document.querySelector('.knight-img');
 let ninjaImg = document.querySelector('.ninja-img');
 
 ////User Character movement Controls
-golemBtn.addEventListener('mousedown', () =>  golemImg.style.marginBottom = '13rem');
+golemBtn.addEventListener('mousedown', () => {
+    golemImg.style.marginBottom = '13rem'
+    let golemAtk = characterArray[1];
+    userChrArray.unshift(golemAtk);
+    console.log(`This is the users choice array ${userChrArray}`);
+});
 golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
-archerBtn.addEventListener('mousedown', () => archerImg.style.paddingBottom = '13rem');
+archerBtn.addEventListener('mousedown', () => {
+   archerImg.style.paddingBottom = '13rem'
+   let archerAtk = characterArray[2];
+   userChrArray.unshift(archerAtk);
+   console.log(`This is the users choice array ${userChrArray}`);
+});
 archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
-knightBtn.addEventListener('mousedown', () => knightImg.style.paddingBottom = '13rem');
+knightBtn.addEventListener('mousedown', () => {
+    knightImg.style.paddingBottom = '13rem'
+    let knightAtk = characterArray[3];
+    userChrArray.unshift( knightAtk);
+    console.log(`This is the users choice array ${userChrArray}`);
+});
 knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
-ninjaBtn.addEventListener('mousedown', () => ninjaImg.style.paddingBottom = '13rem');
+ninjaBtn.addEventListener('mousedown', () => {
+    ninjaImg.style.paddingBottom = '13rem'
+    let ninjaAtk = characterArray[0];
+    userChrArray.unshift(ninjaAtk);
+    console.log(`This is the users choice array ${userChrArray}`);
+});
 ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem');
 
     function moveCpuCharacter(){
-        let cpucharacterArray = ['ninja','golem', 'archer', 'knight'];
+        //// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
+
+
         //Computer movement Controls
         let cpuChoiceCtrl = (Math.ceil(Math.random(1)*3));
         let cpuChoice = characterArray[cpuChoiceCtrl];
@@ -91,23 +136,29 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         let cpuKnightImg = document.querySelector('.cpu-knight-img');
 
         // gets choices and moves images for computer
-        if(cpuChoiceCtrl === 1 ){
+        if(cpuChoiceCtrl === 1){
             // console.log(characterArray[1]);
-            console.log(cpuChoice);
+            // console.log(cpuChoice);
             cpuGolemImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
+            cpuChrArray.unshift(cpuChoice);
+            console.log(cpuChrArray);
 
         }
         else if(cpuChoiceCtrl === 2){
-            console.log(cpuChoice);
+            // console.log(cpuChoice);
             cpuArcherImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
+            cpuChrArray.unshift(cpuChoice);
+            console.log(cpuChrArray);
 
         }
         else {
-            console.log(cpuChoice);
+            // console.log(cpuChoice);
             cpuKnightImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
+            cpuChrArray.unshift(cpuChoice);
+            console.log(cpuChrArray);
         }
     }
     golemBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
@@ -116,11 +167,14 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
     ninjaBtn .addEventListener('mousedown', () =>   moveCpuCharacter());
 
 
+ /*
+ function myfunction (){
+    if(usrChrArray[0]===)
 
 
 
-
-
+ }
+ */
 
 }
 gameSet();
