@@ -14,9 +14,6 @@ function scrollMenu() {
 }
 
 
-
-
-
 ////Ninja Cheat Code Section
 
 
@@ -24,18 +21,28 @@ function scrollMenu() {
 
 
 
+
+
+////-----working here
 ////Get user name
-function getName() {
-    var setName = document.querySelector('#set-name');
-    var getName = document.querySelector('#get-name').value;
-    setName.innerHTML = getName;
-}
-// const getName = document.querySelector('#start-game');
-// getName.addEventListener('click', ()=> {
-//     let setUsrName = document.querySelector('#user-name-placeholder');
-//     let usrName = document.querySelector('#user-name').nodeValue;
-//     setUsrName.innerHTML = usrName;
+// localStorage.setItem()
+
+// let getUserNameInput = document.querySelector('#user-name-input').value;
+// let setUserName = document.querySelector('#set-name');
+
+// let writeName = document.querySelector('#start-game');
+// writeName.addEventListener('click', ()=> {
+//     setUserName.innerHTML = getUserNameInput;
 // });
+
+
+
+
+
+
+
+
+
 
 // All code for the game
 function gameSet(){
