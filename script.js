@@ -136,9 +136,9 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
 
         } //users ninja wins aLl
         else if (userChrArray[0] === "ninja") {
-            userScore + 3;
             console.log(`Game Won, ${userChrArray[0]} wins all!`);
             console.log(`The score is user${userScore}||opponent${cpuScore}`);
+            window.location.href ="ninjawins.html"
         }
 
         // you broke the game
@@ -148,11 +148,13 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
 
          if(userScore === 3) {
             console.log('you won the game');
+            window.location.href ="youwon.html"
             // send to won game page and give replay option
         }
 
         if(cpuScore === 3) {
             console.log('you lost the game');
+            window.location.href ="gameover.html"
             // send to lost game page and give replay option
         }
     }
