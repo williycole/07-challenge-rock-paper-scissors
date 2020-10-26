@@ -26,8 +26,8 @@ function scrollMenu() {
 
 ////Get user name
 function getName() {
-    let setName = document.querySelector('#set-name');
-    let getName = document.querySelector('#get-name').value;
+    var setName = document.querySelector('#set-name');
+    var getName = document.querySelector('#get-name').value;
     setName.innerHTML = getName;
 }
 // const getName = document.querySelector('#start-game');
@@ -44,24 +44,6 @@ let userChrArray = [];
 let cpuChrArray = [];
 let userScore = 0;
 let cpuScore = 0;
-
-
-
-
-
-// // funciton for hamburger nav menu
-// function myFunction() {
-//     var x = document.getElementById("nav-links");
-//     if (x.style.display === "flex") {
-//       x.style.display = "none";
-//     } else {
-//       x.style.display = "flex";
-//     }
-//   }
-
-
-
-
 
 ////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
