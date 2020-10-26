@@ -5,6 +5,15 @@ let cpuChrArray = [];
 let userScore = 0;
 let cpuScore = 0;
 
+////Ninja Cheat Code Section
+
+
+////Nav Directions/Scroll Controls
+
+
+
+
+
 ////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
 let archerBtn = document.querySelector('.archer-attack-button');
@@ -18,7 +27,7 @@ let ninjaImg = document.querySelector('.ninja-img');
 
 ////User Character movement Controls
 golemBtn.addEventListener('mousedown', () => {
-    golemImg.style.marginBottom = '13rem'
+    golemImg.style.marginBottom = '10rem'
     let golemAtk = characterArray[1];
     userChrArray.unshift(golemAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -26,7 +35,7 @@ golemBtn.addEventListener('mousedown', () => {
 golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
 archerBtn.addEventListener('mousedown', () => {
-   archerImg.style.paddingBottom = '13rem'
+   archerImg.style.paddingBottom = '10rem'
    let archerAtk = characterArray[2];
    userChrArray.unshift(archerAtk);
 //    console.log(`This is the users choice array ${userChrArray}`);
@@ -34,7 +43,7 @@ archerBtn.addEventListener('mousedown', () => {
 archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
 knightBtn.addEventListener('mousedown', () => {
-    knightImg.style.paddingBottom = '13rem'
+    knightImg.style.paddingBottom = '10rem'
     let knightAtk = characterArray[3];
     userChrArray.unshift( knightAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -42,7 +51,7 @@ knightBtn.addEventListener('mousedown', () => {
 knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
 ninjaBtn.addEventListener('mousedown', () => {
-    ninjaImg.style.paddingBottom = '13rem'
+    ninjaImg.style.paddingBottom = '10rem'
     let ninjaAtk = characterArray[0];
     userChrArray.unshift(ninjaAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -64,7 +73,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         if(cpuChoiceCtrl === 1){
             // console.log(characterArray[1]);
             // console.log(cpuChoice);
-            cpuGolemImg.style.paddingTop = '13rem';
+            cpuGolemImg.style.paddingTop = '10rem';
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -72,7 +81,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         }
         else if(cpuChoiceCtrl === 2){
             // console.log(cpuChoice);
-            cpuArcherImg.style.paddingTop = '13rem';
+            cpuArcherImg.style.paddingTop = '10rem';
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -80,7 +89,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         }
         else {
             // console.log(cpuChoice);
-            cpuKnightImg.style.paddingTop = '13rem';
+            cpuKnightImg.style.paddingTop = '10rem';
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -96,30 +105,58 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
 //// let characterArray = ['ninja','golem', 'archer', 'knight'];
     function compareAndUpdate(){
         if (userChrArray[0] === cpuChrArray[0]) {
-            console.log(`Its a tie!!!!`)
+            console.log(`Its a tie!!!!`);
         }  // computer wins
         else if (userChrArray[0] === "knight" && cpuChrArray[0] === "golem") {
+            cpuScore++;
             console.log(`Users ${userChrArray[0]} was slain by the opponents ${cpuChrArray[0]}`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`);
         } else if (userChrArray[0] === "golem" && cpuChrArray[0] === "archer") {
+            cpuScore++;
             console.log(`Users ${userChrArray[0]} was slain by the opponents ${cpuChrArray[0]}`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`);
         } else if (userChrArray[0] === "archer" && cpuChrArray[0] === "knight") {
+            cpuScore++;
             console.log(`Users ${userChrArray[0]} was slayed the opponents ${cpuChrArray[0]}`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`);
         }  //user wins
         else if (userChrArray[0] === "golem" && cpuChrArray[0] === "knight") {
+            userScore++;
             console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`);
         } else if (userChrArray[0] === "archer" && cpuChrArray[0] === "golem") {
+            userScore++;
             console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`);
         } else if (userChrArray[0] === "knight" && cpuChrArray[0] === "archer") {
+            userScore++;
             console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`)
 
 
         } //users ninja wins aLl
-        else if (userChrArray[0] === "ninja" ) {
-            console.log(`Game Won, ${userChrArray[0]} wins all!`)
-        }else {
+        else if (userChrArray[0] === "ninja") {
+            userScore + 3;
+            console.log(`Game Won, ${userChrArray[0]} wins all!`);
+            console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }
+
+        // you broke the game
+        else {
             console.log('wut...')
          }
+
+         if(userScore === 3) {
+            console.log('you won the game');
+            // send to won game page and give replay option
+        }
+
+        if(cpuScore === 3) {
+            console.log('you lost the game');
+            // send to lost game page and give replay option
+        }
     }
+
 }
 gameSet();
 
