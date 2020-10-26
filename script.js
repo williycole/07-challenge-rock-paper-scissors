@@ -58,26 +58,6 @@ let cpuChrArray = [];
 let userScore = 0;
 let cpuScore = 0;
 
-let characterCompareArray = {
-    Golem: {weakTo: 'Archer', strongTo: 'Knight'},
-    Archer: {weakTo: 'Knight', strongTo: 'Golem'},
-    Knight: {weakTo: 'Golem', strongTo: 'Archer'},
-    Ninja: {strongTo:'Golem Archer Knight'}
-}
-
-function compareAndUpdate(){
-    if (weapons[myChoice].strongTo === enemyChoice) {
-        // I won
-        return;
-    }
-
-    if (weapons[myChoice].weakTo === enemyChoice) {
-        // I Lost
-        return;
-    }
-}
-
-
 ////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
 let archerBtn = document.querySelector('.archer-attack-button');
@@ -124,8 +104,6 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
 
     function moveCpuCharacter(){
         //// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
-
-
         //Computer movement Controls
         let cpuChoiceCtrl = (Math.ceil(Math.random(1)*3));
         let cpuChoice = characterArray[cpuChoiceCtrl];
@@ -143,6 +121,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             console.log(`This is the computers choice array ${cpuChrArray}`);
+            compareAndUpdate();
         }
         else if(cpuChoiceCtrl === 2){
             // console.log(cpuChoice);
@@ -150,6 +129,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             console.log(`This is the computers choice array ${cpuChrArray}`);
+            compareAndUpdate();
         }
         else {
             // console.log(cpuChoice);
@@ -157,6 +137,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             console.log(`This is the computers choice array ${cpuChrArray}`);
+            compareAndUpdate();
         }
     }
     golemBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
@@ -165,14 +146,27 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
     ninjaBtn .addEventListener('mousedown', () =>   moveCpuCharacter());
 
 
- /*
- function myfunction (){
-    if(usrChrArray[0]===)
+    let characterCompareArray = {
+        golem: {weakTo: 'Archer', strongTo: 'Knight'},
+        archer: {weakTo: 'Knight', strongTo: 'Golem'},
+        knight: {weakTo: 'Golem', strongTo: 'Archer'},
+        ninja: {strongTo:'Golem Archer Knight'}
+    }
 
+    function compareAndUpdate(){
+        if (characterCompareArray[userChrArray[0]].strongTo === cpuChrArray[0]) {
+            // I won
+           console.log('You won')
+        }
 
-
- }
- */
+        else if (characterCompareArray[userChrArray[0]].weakTo === cpuChrArray[0]) {
+            // I Lost
+            console.log('You lost')
+        }
+        else {
+            console.log(`DRAW! You picked ${userChrArray[0]}, your opponent picked ${cpuChrArray[0]}.`)
+        }
+    }
 
 }
 gameSet();
