@@ -142,23 +142,21 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             cpuGolemImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
-            console.log(cpuChrArray);
-
+            console.log(`This is the computers choice array ${cpuChrArray}`);
         }
         else if(cpuChoiceCtrl === 2){
             // console.log(cpuChoice);
             cpuArcherImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
-            console.log(cpuChrArray);
-
+            console.log(`This is the computers choice array ${cpuChrArray}`);
         }
         else {
             // console.log(cpuChoice);
             cpuKnightImg.style.paddingTop = '13rem';
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
-            console.log(cpuChrArray);
+            console.log(`This is the computers choice array ${cpuChrArray}`);
         }
     }
     golemBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
