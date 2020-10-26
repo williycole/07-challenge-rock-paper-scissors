@@ -13,8 +13,8 @@
  * ======= INDEX PAGE CSS
  *
  * 00. common & reset css
- * 01.game text and scoreboard
- * 02.
+ * 01.nav & game directions
+ * 02.game text and scoreboard
  * 03.
  * 04.
  * 05.
@@ -39,6 +39,8 @@ html {
 --prussian-blue: #023047ff;
 --honey-yellow: #ffb703ff;
 --orange: rgb(78, 72, 66);
+--cursive-font: 'Meddon', cursive;
+--game-font: 'VT323', monospace;
 }
 
 body {
@@ -49,7 +51,137 @@ body {
         align-items: center;
 }
 /*****************************
- * 01.game text and scoreboard
+ *   01.nav & game directions
+ *****************************
+ *
+ */
+ header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+ #scroll-hamburger-menu {
+    display: flex;
+    justify-content: start;
+    position: fixed;
+    padding: 1rem;
+    width: 2.5rem;
+    margin-left: 2rem;
+    z-index: 20;
+}
+
+ nav {
+    display: flex;
+    margin-top: 95px;
+    margin-right: 3rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.open-scroll {
+    display: none;
+    position: fixed;
+    width: 30rem;
+    height: 660px;
+    background-image: url("./pictures/misc/open-nav-scroll.svg");
+    background-size: cover;
+    z-index: 10;
+    margin-top: 28rem;
+    margin-left: 9rem;
+}
+
+.open-scroll-contents{
+    display: none;
+    position: fixed;
+    margin-top: 12rem;
+    margin-left: 6.8rem;
+    width: 10rem;
+    z-index: 12;
+    font-family: var(--game-font);
+}
+
+.scroll-h1 {
+    font-size: 1rem;
+    color: black;
+    text-decoration: underline;
+    padding-top: 1rem;
+
+}
+
+.scroll-p {
+    line-height: 1.1;
+    color: #1b1b1b;
+    font-size: .9rem;
+}
+
+.scroll-li {
+    font-size: .8rem;
+    color: #1b1b1b;
+}
+
+#secret-character {
+    color: #1b1b1b;
+}
+
+#guess-character-btn a {
+    color: #1b1b1b;
+    text-decoration: none;
+    font-family: var(--game-font);
+}
+
+/* Desktop View */
+@media(min-width:768px){
+    header{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    #scroll-hamburger-menu {
+       padding: 1rem;
+       width: 5.5rem;
+   }
+
+   .open-scroll {
+        width: 30rem;
+        height: 760px;
+        margin-top: 20rem;
+        margin-left: 5rem;
+    }
+
+    .open-scroll-contents{
+        margin-top: 15rem;
+        margin-left: 7.8rem;
+        width: 13rem;
+    }
+
+    .scroll-h1 {
+        font-size: 1.4rem;
+        color: black;
+        padding-top: .8rem;
+    }
+
+    .scroll-p {
+        line-height: 1.3;
+        color: #1b1b1b;
+        font-size: .9rem;
+    }
+
+    .scroll-li {
+        font-size: 1rem;
+        color: #1b1b1b;
+    }
+}
+
+
+
+/*****************************
+ *   02.game text and scoreboard
  *****************************
  *
  */
@@ -70,6 +202,7 @@ body {
     flex-direction: row;
     justify-content: center;
     font-size: .6rem;
+    font-family: var(--game-font);
 }
 
 #user-score-container {
@@ -78,6 +211,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+
 }
 
 #cpu-score-container {
@@ -130,6 +264,7 @@ body {
     /* padding: 2rem; */
     display: flex;
     flex-direction: row;
+    justify-content: center;
     /* background-image: url(./pictures/noun_Scroll_3367147.svg);
     background-size: cover; */
 }
@@ -137,8 +272,9 @@ body {
 .attack-button {
     border: .2rem solid var(--prussian-blue);
     background-color:var(--honey-yellow) ;
-    /* padding: .2rem; */
-    margin: 0;
+    width: 80px;
+    margin: 5px;
+    padding: 5px;
     color: var(--prussian-blue);
     font-size: .8rem;
     text-transform: uppercase;

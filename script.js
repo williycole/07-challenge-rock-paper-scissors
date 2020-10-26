@@ -1,3 +1,20 @@
+////Nav Directions/Scroll Controls
+function scrollMenu() {
+    let toggleScroll = document.querySelector('.open-scroll');
+    let toggleContents =document.querySelector('.open-scroll-contents');
+
+    if (toggleScroll.style.display === "none" && toggleContents.style.display === "none") {
+        toggleScroll.style.display = "block";
+        toggleContents.style.display = "block";
+
+    } else {
+        toggleScroll.style.display = "none";
+        toggleContents.style.display = "none";
+    }
+}
+
+
+// All code for the game
 function gameSet(){
 let characterArray = ['ninja','golem', 'archer', 'knight'];
 let userChrArray = [];
@@ -8,7 +25,16 @@ let cpuScore = 0;
 ////Ninja Cheat Code Section
 
 
-////Nav Directions/Scroll Controls
+
+// // funciton for hamburger nav menu
+// function myFunction() {
+//     var x = document.getElementById("nav-links");
+//     if (x.style.display === "flex") {
+//       x.style.display = "none";
+//     } else {
+//       x.style.display = "flex";
+//     }
+//   }
 
 
 

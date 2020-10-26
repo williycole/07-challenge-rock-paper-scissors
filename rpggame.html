@@ -7,18 +7,55 @@
     <title>Rock Paper Scissors</title>
     <script src="https://kit.fontawesome.com/f0e8d23775.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Meddon&family=VT323&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
     <main>
-
         <header>
-            <h1 id="game-greeting-message">
-                Choose your weapons wisely only fate and luck will
-                decide the outcomes of your battle.
-            </h1>
+            <div class="menu-container" onclick="scrollMenu()">
+                <img src="./pictures/misc/scroll-icon.svg" id="scroll-hamburger-menu">
+            </div>
+            <nav>
+                <div class="open-scroll">
+                    <div class="open-scroll-contents">
+                        <h1 class="scroll-h1">How to Play</h1>
+                        <p class="scroll-p">
+                            To play simply hold down the left mouse button on the character button of your choice, and
+                            release left mouse button to see if you won the round.
+                        </p>
+                        <p class="scroll-p">
+                            Be careful though, because after three losses you lose! If you get three wins
+                            before the opponent
+                            you Win!
+                        </p>
+                        <h1 class="scroll-h1">Rules</h1>
+                        <ul>
+                            <li class="scroll-li">Paper Air plane Archer beats Rock Golem</li>
+                            <li class="scroll-li">Scissor Knight beats Paper Air plane Archer</li>
+                            <li class="scroll-li">Rock Golem Beats Scissor Knight</li>
+                        </ul>
+
+                        <form>
+                            <h1 class="scroll-h1">Guess Secret Character</h1>
+                            <input id="secret-character" type="text" name="secret-character"
+                                placeholder="hint: N_ _ j a">
+                            <button id="guess-character-btn">
+                                <a href="#">
+                                    Guess Character
+                                </a>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
         </header>
 
+        <h1 id="game-greeting-message">
+            Choose your weapons wisely only fate and luck will
+            decide the outcomes of your battle.
+        </h1>
 
         <div id="score-board">
             <div id="user-score-container">
