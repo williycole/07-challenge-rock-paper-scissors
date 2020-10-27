@@ -427,11 +427,13 @@ nav {
 }
 .index-h1 {
     font-size: 3rem;
+    text-align: center;
     border-bottom: 2px solid var(--honey-yellow);
     border-top: 2px solid var(--honey-yellow);
 }
 .index-h2 {
     font-size: 2.5rem;
+    text-align: center;
     border-bottom: 2px solid var(--honey-yellow);
 }
 .index-p {
