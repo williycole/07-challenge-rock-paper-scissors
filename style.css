@@ -15,7 +15,7 @@
  * 00. common & reset css
  * 01.nav & game directions
  * 02.game text, scoreboard, & user Login
- * 03.
+ * 03.index.hmtl
  * 04.
  * 05.
  * 06.
@@ -60,6 +60,15 @@ body {
 input, button {
     color: #1b1b1b;
 }
+
+button:hover, #scroll-hamburger-menu:hover {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+
+
+
+
 /*****************************
  *   01.nav & game directions
  *****************************
@@ -72,7 +81,11 @@ input, button {
     width: 100%;
 }
 
- #scroll-hamburger-menu {
+.menu-container {
+    margin-bottom: 5.5rem;
+}
+
+#scroll-hamburger-menu {
     display: flex;
     justify-content: start;
     position: fixed;
@@ -82,7 +95,7 @@ input, button {
     z-index: 20;
 }
 
- nav {
+nav {
     display: flex;
     margin-top: 95px;
     margin-right: 3rem;
@@ -119,7 +132,6 @@ input, button {
     color: black;
     text-decoration: underline;
     padding-top: 1rem;
-
 }
 
 .scroll-p {
@@ -195,31 +207,56 @@ input, button {
  *****************************
  *
  */
-#user-form-container {
+
+/* -----Greetings Message*/
+ /* Mobile view */
+ #user-form-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    padding-top: 5rem;
 }
 
+#user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+#user-form-h3 {
+    font-size: 1.5rem;
+}
 
- /* Mobile view */
+#user-name {
+    padding: .2rem;
+    margin: .5rem;
+}
+#set-user-name {
+    font-size: 1.5rem;
+    color: var(--honey-yellow);
+    padding: .5rem 2.5rem;
+    border: .2rem solid var(--prussian-blue);
+    background-color: var(--jet);
+    text-transform: uppercase;
+}
+
 #game-greeting-message{
     display: flex;
     justify-content: center;
     text-align: center;
-    padding: 4rem;
-    margin: 0;
+    padding: 3rem 2rem;
+    margin: 5rem 1rem;
     font-size: 2rem;
+    border: 2px solid var(--honey-yellow);
 }
 
-
+/* -----Score Board */
 #score-board {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 2rem 0 .5rem 0;
+    padding: .5rem;
     font-size: .6rem;
     background: var(--eerie-black);
     border: solid 2px white;
@@ -227,37 +264,40 @@ input, button {
 
 #user-score-container {
     display: flex;
+    font-size: .8rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: #1b1b1b;
+    background: #1b1b1bbb;
 }
 
 #cpu-score-container {
     display: flex;
+    font-size: .8rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: #1b1b1b;
+    background: #1b1b1bbb;
 }
 
 
 
 
 
-/* Character Styling */
+/*-----Game and Characters */
+
+/* Mobile View */
 .character-size-user {
     width: 70px;
-    /* width: 120px; */
+ /* width: 120px; */
 }
 
 .character-size-cpu {
     width: 70px;
    /* width: 120px; */
 }
-
 
 .user-character {
     /* padding-bottom: 5rem; */
@@ -267,18 +307,14 @@ input, button {
     /* padding-top: 10rem; */
 }
 
-
-
-
-/* Mobile View */
 #game-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100vh;
-    padding: 80px;
+    padding: 0px;
     flex-direction: column;
-    height: 80vh;
+    height: 63vh;
 }
 
 #atk-btn-container {
@@ -299,7 +335,6 @@ input, button {
     color: var(--honey-yellow);
     font-size: .8rem;
     text-transform: uppercase;
-
 }
 
 /* Desktop View */
@@ -312,63 +347,109 @@ input, button {
         color: var(--prussian-blue);
         font-size: 1.2rem;
         text-transform: uppercase;
-
     }
 }
 
+/*-----User Character Movement Classes */
 
-/* User Character Movement Classes */
 #user-character-section{
     display: flex;
     justify-content: end;
     align-items: flex-end;
     /* padding-bottom: 150px; */
 }
-    .golem-img {
-        display: flex;
-        padding: 0rem;
-    }
 
-    .archer-img {
-        display: flex;
-        padding: 0rem;
-    }
+.golem-img {
+    display: flex;
+    padding: 0rem;
+}
 
-    .knight-img {
-        display: flex;
-        padding: 0rem;
-    }
+.archer-img {
+    display: flex;
+    padding: 0rem;
+}
 
-    .ninja-img {
-        display: flex;
-        padding: 0rem;
-    }
+.knight-img {
+    display: flex;
+    padding: 0rem;
+}
 
-    .user-character {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-/* Computer Character Movement Classes */
+.ninja-img {
+    display: flex;
+    padding: 0rem;
+}
+
+.user-character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*-----Computer Character Movement Classes */
+
 #cpu-character-section {
     display: flex;
     justify-content: center;
     /* padding-bottom: 100px; */
 }
-    .cpu-golem-img {
-        /* display: none; */
-        padding-top: 0rem;
-    }
-    .cpu-archer-img {
-        /* display: none; */
-        padding-top: 0rem;
-    }
-    .cpu-knight-img {
-        /* display: none; */
-        padding-top: 0rem;
-    }
+
+.cpu-golem-img {
+    /* display: none; */
+    padding-top: 0rem;
+}
+
+.cpu-archer-img {
+    /* display: none; */
+    padding-top: 0rem;
+}
+
+.cpu-knight-img {
+    /* display: none; */
+    padding-top: 0rem;
+}
 
 
 
 
 
+/*****************************
+ *   03.index.hmtl
+ *****************************
+ *
+ */
+
+#index-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.index-h1 {
+    font-size: 3rem;
+    border-bottom: 2px solid var(--honey-yellow);
+    border-top: 2px solid var(--honey-yellow);
+}
+.index-h2 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--honey-yellow);
+}
+.index-p {
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 2px solid var(--honey-yellow);
+}
+.index-a {
+    color: var(--honey-yellow);
+    text-decoration: none;
+}
+
+#play-game {
+    font-size: 1.5rem;
+    padding: .5rem 2.5rem;
+    border: .2rem solid var(--prussian-blue);
+    background-color:var(--jet) ;
+    text-transform: uppercase;
+}

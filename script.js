@@ -66,7 +66,7 @@ let ninjaImg = document.querySelector('.ninja-img');
 
 ////User Character movement Controls
 golemBtn.addEventListener('mousedown', () => {
-    golemImg.style.marginBottom = '10rem'
+    golemImg.style.marginBottom = '7rem'
     let golemAtk = characterArray[1];
     userChrArray.unshift(golemAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -74,7 +74,7 @@ golemBtn.addEventListener('mousedown', () => {
 golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
 archerBtn.addEventListener('mousedown', () => {
-   archerImg.style.paddingBottom = '10rem'
+   archerImg.style.paddingBottom = '7rem'
    let archerAtk = characterArray[2];
    userChrArray.unshift(archerAtk);
 //    console.log(`This is the users choice array ${userChrArray}`);
@@ -82,7 +82,7 @@ archerBtn.addEventListener('mousedown', () => {
 archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
 knightBtn.addEventListener('mousedown', () => {
-    knightImg.style.paddingBottom = '10rem'
+    knightImg.style.paddingBottom = '7rem'
     let knightAtk = characterArray[3];
     userChrArray.unshift( knightAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -90,7 +90,7 @@ knightBtn.addEventListener('mousedown', () => {
 knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
 ninjaBtn.addEventListener('mousedown', () => {
-    ninjaImg.style.paddingBottom = '10rem'
+    ninjaImg.style.paddingBottom = '7rem'
     let ninjaAtk = characterArray[0];
     userChrArray.unshift(ninjaAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -114,7 +114,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         if(cpuChoiceCtrl === 1){
             // console.log(characterArray[1]);
             // console.log(cpuChoice);
-            cpuGolemImg.style.paddingTop = '10rem';
+            cpuGolemImg.style.paddingTop = '7rem';
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -122,7 +122,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         }
         else if(cpuChoiceCtrl === 2){
             // console.log(cpuChoice);
-            cpuArcherImg.style.paddingTop = '10rem';
+            cpuArcherImg.style.paddingTop = '7rem';
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -130,7 +130,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         }
         else {
             // console.log(cpuChoice);
-            cpuKnightImg.style.paddingTop = '10rem';
+            cpuKnightImg.style.paddingTop = '7rem';
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
