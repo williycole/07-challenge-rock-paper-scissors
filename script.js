@@ -45,8 +45,13 @@ function gameSet(){
 let characterArray = ['ninja','golem', 'archer', 'knight'];
 let userChrArray = [];
 let cpuChrArray = [];
+
 let userScore = 0;
 let cpuScore = 0;
+
+
+
+
 
 ////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
@@ -93,6 +98,8 @@ ninjaBtn.addEventListener('mousedown', () => {
 ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem');
 
     function moveCpuCharacter(){
+
+
         //// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
         //Computer movement Controls
         let cpuChoiceCtrl = (Math.ceil(Math.random(1)*3));
@@ -138,37 +145,55 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
 //// let characterArray = ['ninja','rock', 'paper', 'scissors'];
 //// let characterArray = ['ninja','golem', 'archer', 'knight'];
     function compareAndUpdate(){
+
+        //user score in dom
+        let placeUserScore = document.querySelector('#userScore');
+
+
+        //cpu score in dom
+        let placeCpuScore = document.querySelector('#cpuScore');
+
+
+
+        ////Querys for sound effects
+        let soundEffect;
         if (userChrArray[0] === cpuChrArray[0]) {
+            soundEffect = new Audio("./sounds/crowdShock1.mp3")
+            soundEffect.play();
             console.log(`Its a tie!!!!`);
-        }  // computer wins
+
+
+        }  //------computer wins
         else if (userChrArray[0] === "knight" && cpuChrArray[0] === "golem") {
-            cpuScore++;
-            console.log(`Users ${userChrArray[0]} was slain by the opponents ${cpuChrArray[0]}`);
-            console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        } else if (userChrArray[0] === "golem" && cpuChrArray[0] === "archer") {
-            cpuScore++;
-            console.log(`Users ${userChrArray[0]} was slain by the opponents ${cpuChrArray[0]}`);
-            console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        } else if (userChrArray[0] === "archer" && cpuChrArray[0] === "knight") {
-            cpuScore++;
-            console.log(`Users ${userChrArray[0]} was slayed the opponents ${cpuChrArray[0]}`);
-            console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        }  //user wins
+            soundEffect = new Audio("./sounds/crowdShock3.wav"), soundEffect.play();
+            cpuScore++, placeCpuScore.innerHTML = cpuScore;
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }
+        else if (userChrArray[0] === "golem" && cpuChrArray[0] === "archer") {
+            soundEffect = new Audio("./sounds/crowdShock2.wav"), soundEffect.play();
+            cpuScore++, placeCpuScore.innerHTML = cpuScore;
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }
+        else if (userChrArray[0] === "archer" && cpuChrArray[0] === "knight") {
+            soundEffect = new Audio("./sounds/crowdShock2.wav"), soundEffect.play();
+            cpuScore++, placeCpuScore.innerHTML = cpuScore;
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }  //------user wins
         else if (userChrArray[0] === "golem" && cpuChrArray[0] === "knight") {
-            userScore++;
-            console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
-            console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        } else if (userChrArray[0] === "archer" && cpuChrArray[0] === "golem") {
-            userScore++;
-            console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
-            console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        } else if (userChrArray[0] === "knight" && cpuChrArray[0] === "archer") {
-            userScore++;
-            console.log(`Users ${userChrArray[0]} slayed the opponents ${cpuChrArray[0]}`);
-            console.log(`The score is user${userScore}||opponent${cpuScore}`)
-
-
-        } //users ninja wins aLl
+            soundEffect = new Audio("./sounds/happyCrowd2.wav"), soundEffect.play();
+            userScore++, placeUserScore.innerHTML = userScore;
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }
+        else if (userChrArray[0] === "archer" && cpuChrArray[0] === "golem") {
+            soundEffect = new Audio("./sounds/happyCrowd1.wav"), soundEffect.play();
+            userScore++, placeUserScore.innerHTML = userScore;
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }
+        else if (userChrArray[0] === "knight" && cpuChrArray[0] === "archer") {
+            soundEffect = new Audio("./sounds/happyCrowd2.wav"), soundEffect.play();
+            userScore++, placeUserScore.innerHTML = userScore;
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`)
+        } //------users ninja wins aLl
         else if (userChrArray[0] === "ninja") {
             console.log(`Game Won, ${userChrArray[0]} wins all!`);
             console.log(`The score is user${userScore}||opponent${cpuScore}`);

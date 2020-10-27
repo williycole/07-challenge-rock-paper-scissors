@@ -30,6 +30,7 @@
     padding:0;
     margin: 0;
     color:white;
+    font-family: var(--game-font);
 }
 
 html {
@@ -199,6 +200,7 @@ input, button {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-top: 5rem;
 }
 
 
@@ -219,7 +221,8 @@ input, button {
     flex-direction: row;
     justify-content: center;
     font-size: .6rem;
-    font-family: var(--game-font);
+    background: var(--eerie-black);
+    border: solid 2px white;
 }
 
 #user-score-container {
@@ -228,7 +231,7 @@ input, button {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-
+    background: #1b1b1b;
 }
 
 #cpu-score-container {
@@ -237,6 +240,7 @@ input, button {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+    background: #1b1b1b;
 }
 
 
@@ -288,11 +292,11 @@ input, button {
 
 .attack-button {
     border: .2rem solid var(--prussian-blue);
-    background-color:var(--honey-yellow) ;
+    background-color:var(--jet) ;
     width: 80px;
     margin: 5px;
     padding: 5px;
-    color: var(--prussian-blue);
+    color: var(--honey-yellow);
     font-size: .8rem;
     text-transform: uppercase;
 
