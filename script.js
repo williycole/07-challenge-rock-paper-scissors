@@ -34,6 +34,7 @@ setUserName.addEventListener('click', () => {
 ////Default to prevent reload after get user name
 document.querySelector('#set-user-name').addEventListener("click", function(event){
     event.preventDefault()
+    window.location.href = "#gameContainer";
 });
 
 
@@ -66,7 +67,7 @@ let ninjaImg = document.querySelector('.ninja-img');
 
 ////User Character movement Controls
 golemBtn.addEventListener('mousedown', () => {
-    golemImg.style.marginBottom = '7rem'
+    golemImg.style.marginBottom = '5rem'
     let golemAtk = characterArray[1];
     userChrArray.unshift(golemAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -74,7 +75,7 @@ golemBtn.addEventListener('mousedown', () => {
 golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
 archerBtn.addEventListener('mousedown', () => {
-   archerImg.style.paddingBottom = '7rem'
+   archerImg.style.paddingBottom = '5rem'
    let archerAtk = characterArray[2];
    userChrArray.unshift(archerAtk);
 //    console.log(`This is the users choice array ${userChrArray}`);
@@ -82,7 +83,7 @@ archerBtn.addEventListener('mousedown', () => {
 archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
 knightBtn.addEventListener('mousedown', () => {
-    knightImg.style.paddingBottom = '7rem'
+    knightImg.style.paddingBottom = '5rem'
     let knightAtk = characterArray[3];
     userChrArray.unshift( knightAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -90,7 +91,7 @@ knightBtn.addEventListener('mousedown', () => {
 knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
 ninjaBtn.addEventListener('mousedown', () => {
-    ninjaImg.style.paddingBottom = '7rem'
+    ninjaImg.style.paddingBottom = '5rem'
     let ninjaAtk = characterArray[0];
     userChrArray.unshift(ninjaAtk);
     // console.log(`This is the users choice array ${userChrArray}`);
@@ -114,7 +115,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         if(cpuChoiceCtrl === 1){
             // console.log(characterArray[1]);
             // console.log(cpuChoice);
-            cpuGolemImg.style.paddingTop = '7rem';
+            cpuGolemImg.style.paddingTop = '5rem';
             addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -122,7 +123,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         }
         else if(cpuChoiceCtrl === 2){
             // console.log(cpuChoice);
-            cpuArcherImg.style.paddingTop = '7rem';
+            cpuArcherImg.style.paddingTop = '5rem';
             addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
@@ -130,7 +131,7 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
         }
         else {
             // console.log(cpuChoice);
-            cpuKnightImg.style.paddingTop = '7rem';
+            cpuKnightImg.style.paddingTop = '5rem';
             addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
