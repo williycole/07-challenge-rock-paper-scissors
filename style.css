@@ -415,6 +415,9 @@ nav {
 
 .ninja-attack-button {
     display: none;
+    /* for ninja checkbox */
+    justify-content: center;
+    align-items: center;
 }
 
 .user-character {

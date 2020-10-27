@@ -14,34 +14,21 @@ function scrollMenu() {
 }
 
 
-////Ninja Cheat Code Section
-let guess = []
-let secretName = document.querySelector('#secret-character').value;
-let ninja = document.querySelector('.ninja-img');
-let ninjaBtn = document.querySelector('.ninja-attack-button');
-guess.unshift(secretName);
-console.log(guess);
-function cheatCode(){
-  if(guess[0] === 'ninja'){
-    ninja.style.display = 'flex';
-    ninjaBtn.style.display = 'flex';
+
+
+////Ninja Toggle
+function ninjaToggle(){
+    let toggleNinja = document.querySelector('#ninja-checkbox');
+    let ninja = document.querySelector('.ninja-img');
+    let ninjaBtn = document.querySelector('.ninja-attack-button');
+    if(toggleNinja.checked === true){
+        ninja.style.display = "flex";
+        ninjaBtn.style.display = "flex";
+    }else {
+        ninja.style.display = "none";
+        ninjaBtn.style.display = "none";
     }
-}////Default to prevent reload after get user name
-document.querySelector('#guess-character-btn').addEventListener("click", function(event){
-    event.preventDefault()
-});
-
-
-////Index Soundtrack
-
-////Win Page
-
-////Lose Page
-
-////Fix Touch Issues
-
-
-
+}
 
 
 ////Get user name
@@ -69,10 +56,6 @@ let cpuChrArray = [];
 
 let userScore = 0;
 let cpuScore = 0;
-
-
-
-
 
 ////User querySelectors
 let golemBtn = document.querySelector('.golem-attack-button');
