@@ -23,22 +23,18 @@ function scrollMenu() {
 
 
 
-////-----working here
+
 ////Get user name
-// localStorage.setItem()
-
-// let getUserNameInput = document.querySelector('#user-name-input').value;
-// let setUserName = document.querySelector('#set-name');
-
-// let writeName = document.querySelector('#start-game');
-// writeName.addEventListener('click', ()=> {
-//     setUserName.innerHTML = getUserNameInput;
-// });
-
-
-
-
-
+let setUserName = document.querySelector('#set-user-name');
+setUserName.addEventListener('click', () => {
+    let placeUserName = document.querySelector('#put-user-name-here');
+    let userName = document.querySelector('#user-name').value;
+    placeUserName.textContent = userName + `'s`;
+});
+////Default to prevent reload after get user name
+document.querySelector('#set-user-name').addEventListener("click", function(event){
+    event.preventDefault()
+});
 
 
 
