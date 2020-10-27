@@ -15,10 +15,30 @@ function scrollMenu() {
 
 
 ////Ninja Cheat Code Section
+let guess = []
+let secretName = document.querySelector('#secret-character').value;
+let ninja = document.querySelector('.ninja-img');
+let ninjaBtn = document.querySelector('.ninja-attack-button');
+guess.unshift(secretName);
+console.log(guess);
+function cheatCode(){
+  if(guess[0] === 'ninja'){
+    ninja.style.display = 'flex';
+    ninjaBtn.style.display = 'flex';
+    }
+}////Default to prevent reload after get user name
+document.querySelector('#guess-character-btn').addEventListener("click", function(event){
+    event.preventDefault()
+});
 
 
+////Index Soundtrack
 
+////Win Page
 
+////Lose Page
+
+////Fix Touch Issues
 
 
 
@@ -66,42 +86,42 @@ let knightImg = document.querySelector('.knight-img');
 let ninjaImg = document.querySelector('.ninja-img');
 
 ////User Character movement Controls
-golemBtn.addEventListener('mousedown', () => {
+golemBtn.addEventListener('click', () => {
     golemImg.style.marginBottom = '5rem'
+    golemImg.style.transition = 'all .3s ease-in-out'
+    setTimeout(() => {golemImg.style.marginBottom = '0rem'}, 1500);
     let golemAtk = characterArray[1];
     userChrArray.unshift(golemAtk);
-    // console.log(`This is the users choice array ${userChrArray}`);
 });
-golemBtn.addEventListener('mouseup', () => golemImg.style.marginBottom = '0rem');
 
-archerBtn.addEventListener('mousedown', () => {
-   archerImg.style.paddingBottom = '5rem'
-   let archerAtk = characterArray[2];
-   userChrArray.unshift(archerAtk);
-//    console.log(`This is the users choice array ${userChrArray}`);
+archerBtn.addEventListener('click', () => {
+    archerImg.style.marginBottom = '5rem'
+    archerImg.style.transition = 'all .3s ease-in-out'
+    setTimeout(() => {archerImg.style.marginBottom = '0rem'}, 1500);
+    let archerAtk = characterArray[2];
+    userChrArray.unshift(archerAtk);
 });
-archerBtn.addEventListener('mouseup', () => archerImg.style.paddingBottom = '0rem');
 
-knightBtn.addEventListener('mousedown', () => {
-    knightImg.style.paddingBottom = '5rem'
+knightBtn.addEventListener('click', () => {
+    knightImg.style.marginBottom = '5rem'
     let knightAtk = characterArray[3];
-    userChrArray.unshift( knightAtk);
-    // console.log(`This is the users choice array ${userChrArray}`);
+    knightImg.style.transition = 'all .3s ease-in-out'
+    setTimeout(() => {knightImg.style.marginBottom = '0rem'}, 1500);
+    userChrArray.unshift(knightAtk);
 });
-knightBtn.addEventListener('mouseup', () => knightImg.style.paddingBottom = '0rem');
 
-ninjaBtn.addEventListener('mousedown', () => {
-    ninjaImg.style.paddingBottom = '5rem'
+ninjaBtn.addEventListener('click', () => {
+    ninjaImg.style.marginBottom = '5rem'
     let ninjaAtk = characterArray[0];
     userChrArray.unshift(ninjaAtk);
-    // console.log(`This is the users choice array ${userChrArray}`);
+    ninjaImg.style.transition = 'all .3s ease-in-out'
+    setTimeout(() => {ninjaImg.style.marginBottom = '0rem'}, 1500);
 });
-ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem');
+// console.log(`This is the users choice array ${userChrArray}`);
 
+
+    //function that moves cpu characters
     function moveCpuCharacter(){
-
-
-        //// let choiceArray = ['Boom','Rock', 'Paper', 'Scissors'];
         //Computer movement Controls
         let cpuChoiceCtrl = (Math.ceil(Math.random(1)*3));
         let cpuChoice = characterArray[cpuChoiceCtrl];
@@ -113,95 +133,104 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
 
         // gets choices and moves images for computer
         if(cpuChoiceCtrl === 1){
-            // console.log(characterArray[1]);
-            // console.log(cpuChoice);
             cpuGolemImg.style.paddingTop = '5rem';
-            addEventListener('mouseup', () =>   cpuGolemImg.style.paddingTop = '0rem');
+            cpuGolemImg.style.transition = 'all .3s ease-in-out'
+            addEventListener('click', () =>{
+                setTimeout(() => {cpuGolemImg.style.paddingTop = '0rem'}, 1500);
+            });
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
             compareAndUpdate();
         }
         else if(cpuChoiceCtrl === 2){
-            // console.log(cpuChoice);
             cpuArcherImg.style.paddingTop = '5rem';
-            addEventListener('mouseup', () =>   cpuArcherImg.style.paddingTop = '0rem');
+            cpuArcherImg.style.transition = 'all .3s ease-in-out'
+            addEventListener('click', () =>{
+                setTimeout(() => {cpuArcherImg.style.paddingTop = '0rem'}, 1500);
+            });
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
             compareAndUpdate();
         }
         else {
-            // console.log(cpuChoice);
             cpuKnightImg.style.paddingTop = '5rem';
-            addEventListener('mouseup', () => cpuKnightImg.style.paddingTop = '0rem');
+            cpuKnightImg.style.transition = 'all .3s ease-in-out'
+            addEventListener('click', () =>{
+                setTimeout(() => {cpuKnightImg.style.paddingTop = '0rem'}, 1500);
+            });
             cpuChrArray.unshift(cpuChoice);
             // console.log(`This is the computers choice array ${cpuChrArray}`);
             compareAndUpdate();
         }
     }
-    golemBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
-    archerBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
-    knightBtn.addEventListener('mousedown', () =>   moveCpuCharacter());
-    ninjaBtn .addEventListener('mousedown', () =>   moveCpuCharacter());
+    golemBtn.addEventListener('click', () => moveCpuCharacter());
+    archerBtn.addEventListener('click', () => moveCpuCharacter());
+    knightBtn.addEventListener('click', () => moveCpuCharacter());
+    ninjaBtn.addEventListener('click', () => moveCpuCharacter());
 
-//// let characterArray = ['ninja','rock', 'paper', 'scissors'];
-//// let characterArray = ['ninja','golem', 'archer', 'knight'];
+
+    //Compares cpu and user choices, updates scoreboard, and plays sound effects
     function compareAndUpdate(){
-
-        //user score in dom
-        let placeUserScore = document.querySelector('#userScore');
-
-
-        //cpu score in dom
-        let placeCpuScore = document.querySelector('#cpuScore');
-
-
-
-        ////Querys for sound effects
-        let soundEffect;
+        let wonAlert = document.querySelector('#you-won-h1');
+        let loseAlert = document.querySelector('#you-lost-h1');
+        let tieAlert = document.querySelector('#tie-h1');
+        let placeUserScore = document.querySelector('#userScore');//user score in dom
+        let placeCpuScore = document.querySelector('#cpuScore');//cpu score in dom
+        let soundEffect;////Querys for sound effects
         if (userChrArray[0] === cpuChrArray[0]) {
-            soundEffect = new Audio("./sounds/crowdShock1.mp3")
-            soundEffect.play();
-            console.log(`Its a tie!!!!`);
-
-
+            soundEffect = new Audio("./sounds/crowdShock1.mp3"), soundEffect.play();
+            tieAlert.style.display = 'block';
+            setTimeout(() => { tieAlert.style.display = 'none'}, 1500);
         }  //------computer wins
         else if (userChrArray[0] === "knight" && cpuChrArray[0] === "golem") {
             soundEffect = new Audio("./sounds/crowdShock3.wav"), soundEffect.play();
             cpuScore++, placeCpuScore.innerHTML = cpuScore;
+
+            loseAlert.style.display = 'block';
+            setTimeout(() => { loseAlert.style.display = 'none'}, 1500);
             // console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        }
-        else if (userChrArray[0] === "golem" && cpuChrArray[0] === "archer") {
+        }else if (userChrArray[0] === "golem" && cpuChrArray[0] === "archer") {
             soundEffect = new Audio("./sounds/crowdShock2.wav"), soundEffect.play();
             cpuScore++, placeCpuScore.innerHTML = cpuScore;
+
+            loseAlert.style.display = 'block';
+            setTimeout(() => { loseAlert.style.display = 'none'}, 1500);
             // console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        }
-        else if (userChrArray[0] === "archer" && cpuChrArray[0] === "knight") {
+        }else if (userChrArray[0] === "archer" && cpuChrArray[0] === "knight") {
             soundEffect = new Audio("./sounds/crowdShock2.wav"), soundEffect.play();
             cpuScore++, placeCpuScore.innerHTML = cpuScore;
+
+            loseAlert.style.display = 'block';
+            setTimeout(() => { loseAlert.style.display = 'none'}, 1500);
             // console.log(`The score is user${userScore}||opponent${cpuScore}`);
         }  //------user wins
         else if (userChrArray[0] === "golem" && cpuChrArray[0] === "knight") {
             soundEffect = new Audio("./sounds/happyCrowd2.wav"), soundEffect.play();
             userScore++, placeUserScore.innerHTML = userScore;
+
+            wonAlert.style.display = 'block';
+            setTimeout(() => { wonAlert.style.display = 'none'}, 1500);
             // console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        }
-        else if (userChrArray[0] === "archer" && cpuChrArray[0] === "golem") {
-            soundEffect = new Audio("./sounds/happyCrowd1.wav"), soundEffect.play();
-            userScore++, placeUserScore.innerHTML = userScore;
-            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
-        }
-        else if (userChrArray[0] === "knight" && cpuChrArray[0] === "archer") {
+        }else if (userChrArray[0] === "archer" && cpuChrArray[0] === "golem") {
             soundEffect = new Audio("./sounds/happyCrowd2.wav"), soundEffect.play();
             userScore++, placeUserScore.innerHTML = userScore;
+
+            wonAlert.style.display = 'block';
+            setTimeout(() => { wonAlert.style.display = 'none'}, 1500);
+            // console.log(`The score is user${userScore}||opponent${cpuScore}`);
+        }else if (userChrArray[0] === "knight" && cpuChrArray[0] === "archer") {
+            soundEffect = new Audio("./sounds/happyCrowd2.wav"), soundEffect.play();
+            userScore++, placeUserScore.innerHTML = userScore;
+
+            wonAlert.style.display = 'block';
+            setTimeout(() => { wonAlert.style.display = 'none'}, 1500);
             // console.log(`The score is user${userScore}||opponent${cpuScore}`)
         } //------users ninja wins aLl
         else if (userChrArray[0] === "ninja") {
             console.log(`Game Won, ${userChrArray[0]} wins all!`);
             console.log(`The score is user${userScore}||opponent${cpuScore}`);
             window.location.href ="ninjawins.html"
-        }
-
-        // you broke the game
+        }// you broke the game
         else {
             console.log('wut...')
          }
@@ -218,9 +247,9 @@ ninjaBtn.addEventListener('mouseup', () => ninjaImg.style.paddingBottom = '0rem'
             // send to lost game page and give replay option
         }
     }
-
 }
 gameSet();
+
 
 
 

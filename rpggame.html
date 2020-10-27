@@ -40,12 +40,8 @@
                         <form>
                             <h1 class="scroll-h1">Guess Secret Character</h1>
                             <input id="secret-character" type="text" name="secret-character"
-                                placeholder="hint: N_ _ j a">
-                            <button id="guess-character-btn">
-                                <a href="#">
-                                    Guess Character
-                                </a>
-                            </button>
+                                placeholder="hint: n_ _ j a" value="">
+                            <button id="guess-character-btn" onclick="cheatCode()">Guess Character</button>
                         </form>
                     </div>
                 </div>
@@ -69,79 +65,94 @@
             decide the outcome of your battle.
         </h1>
 
-        <div id="score-board">
-            <div id="user-score-container">
-                <h1>
-                    <span id="put-user-name-here"></span>
-                    Score
-                </h1>
-                <h2 id="userScore">0</h2>
+        <div id="scoreboard-and-game-wrapper">
+
+
+            <div id="score-board">
+                <div id="user-score-container">
+                    <h1>
+                        <span id="put-user-name-here"></span>
+                        Score
+                    </h1>
+                    <h2 id="userScore">0</h2>
+                </div>
+                <div id="cpu-score-container">
+                    <h1>Opponent's Score</h1>
+                    <h2 id="cpuScore">0</h2>
+                </div>
             </div>
-            <div id="cpu-score-container">
-                <h1>Opponent's Score</h1>
-                <h2 id="cpuScore">0</h2>
+
+
+            <div id="gameContainer">
+                <section id=cpu-character-section>
+                    <div class="golem-container">
+                        <div class="cpu-character">
+                            <img class="character-size-cpu cpu-golem-img" src="./pictures/cpu-characters/cpu-golem.svg"
+                                alt="Image of a stone Golem.">
+                        </div>
+                    </div>
+                    <div class="archer-container">
+                        <div class="cpu-character">
+                            <img class="character-size-cpu cpu-archer-img"
+                                src="./pictures/cpu-characters/cpu-archer.svg" alt="Archer">
+                        </div>
+                    </div>
+                    <div class="knight-container">
+                        <div class="cpu-character">
+                            <img class="character-size-cpu cpu-knight-img"
+                                src="./pictures/cpu-characters/cpu-knight.svg" alt="Image of a Knight.">
+                        </div>
+                    </div>
+                </section>
+
+                <section id="round-message">
+                    <h1 id="you-won-h1">
+                        You won that round
+                    </h1>
+                    <h1 id="tie-h1">
+                        Tie
+                    </h1>
+                    <h1 id="you-lost-h1">
+                        You lost that round
+                    </h1>
+                </section>
+
+                <section id="user-character-section">
+                    <div class="golem-container">
+                        <div class="user-character">
+                            <img class="character-size-user golem-img" src="./pictures/user-characters/user-golem.svg"
+                                alt="Image of a stone Golem.">
+                        </div>
+                    </div>
+                    <div class="archer-container">
+                        <div class="user-character">
+                            <img class="character-size-user archer-img" src="./pictures/user-characters/user-archer.svg"
+                                alt="archer.">
+                        </div>
+                    </div>
+                    <div class="knight-container">
+                        <div class="user-character">
+                            <img class="character-size-user knight-img" src="./pictures/user-characters/user-knight.svg"
+                                alt="Image of a Knight.">
+                        </div>
+                    </div>
+                    <div class="ninja-container">
+                        <div class="user-character">
+                            <img class="character-size-user ninja-img" src="./pictures/user-characters/user-ninja.svg"
+                                alt="Image of a Ninja.">
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
 
 
-        <div id="gameContainer">
-            <section id=cpu-character-section>
-                <div class="rock-container">
-                    <div class="cpu-character">
-                        <img class="character-size-cpu cpu-golem-img" src="./pictures/cpu-characters/cpu-golem.svg"
-                            alt="Image of a stone Golem.">
-                    </div>
-                </div>
-                <div class="paper-container">
-                    <div class="cpu-character">
-                        <img class="character-size-cpu cpu-archer-img" src="./pictures/cpu-characters/cpu-archer.svg"
-                            alt="Image of a female Archer.">
-                    </div>
-                </div>
-                <div class="scissors-container">
-                    <div class="cpu-character">
-                        <img class="character-size-cpu cpu-knight-img" src="./pictures/cpu-characters/cpu-knight.svg"
-                            alt="Image of a Knight.">
-                    </div>
-                </div>
-            </section>
-
-
-            <section id="user-character-section">
-                <div class="rock-container">
-                    <div class="user-character">
-                        <img class="character-size-user golem-img" src="./pictures/user-characters/user-golem.svg"
-                            alt="Image of a stone Golem.">
-                    </div>
-                </div>
-                <div class="paper-container">
-                    <div class="user-character">
-                        <img class="character-size-user archer-img" src="./pictures/user-characters/user-archer.svg"
-                            alt="Image of a female archer.">
-                    </div>
-                </div>
-                <div class="scissors-container">
-                    <div class="user-character">
-                        <img class="character-size-user knight-img" src="./pictures/user-characters/user-knight.svg"
-                            alt="Image of a Knight.">
-                    </div>
-                </div>
-                <div class="ninja-container">
-                    <div class="user-character">
-                        <img class="character-size-user ninja-img" src="./pictures/user-characters/user-ninja.svg"
-                            alt="Image of a Ninja.">
-                    </div>
-                </div>
+            <section id="atk-btn-container">
+                <button class="golem-attack-button attack-button">Rock Golem Attack</button>
+                <button class="archer-attack-button attack-button">Paper Archer Attack</button>
+                <button class="knight-attack-button attack-button">Scissor Knight Attack</button>
+                <button class="ninja-attack-button attack-button">Ninja Attack</button>
             </section>
         </div>
-
-
-        <section id="atk-btn-container">
-            <button class="golem-attack-button attack-button">Rock Golem Attack</button>
-            <button class="archer-attack-button attack-button">Paper Archer Attack</button>
-            <button class="knight-attack-button attack-button">Scissor Knight Attack</button>
-            <button class="ninja-attack-button attack-button">Ninja Attack</button>
-        </section>
     </main>
     <!-- <footer id="contributions">
         <h5>
