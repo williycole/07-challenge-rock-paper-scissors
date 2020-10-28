@@ -70,21 +70,19 @@ button:hover, #scroll-hamburger-menu:hover {
     transform: scale(1.1);
     transition: all .3s ease-in-out;
 }
-    padding-top: 3rem;
-}
 
-
-/*****************************
- *   01.nav & game directions
- *****************************
- *
- */
  header{
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
 }
+/*****************************
+ *   01.nav & game directions
+ *****************************
+ *
+ */
+
 
 .menu-container {
     margin-bottom: 6rem;
@@ -96,7 +94,7 @@ button:hover, #scroll-hamburger-menu:hover {
     position: fixed;
     padding: 1rem;
     width: 2.5rem;
-    margin-left: 2rem;
+    margin-right: 0rem;
     z-index: 20;
 }
 
@@ -162,12 +160,6 @@ nav {
 
 /* Desktop View */
 @media(min-width:768px){
-    header{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-    }
 
     #scroll-hamburger-menu {
        padding: 1rem;

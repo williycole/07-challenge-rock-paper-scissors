@@ -224,13 +224,11 @@ ninjaBtn.addEventListener('click', () => {
          if(userScore === 3) {
             console.log('you won the game');
             window.location.href ="youwon.html"
-            // send to won game page and give replay option
         }
 
         if(cpuScore === 3) {
             console.log('you lost the game');
             window.location.href ="gameover.html"
-            // send to lost game page and give replay option
         }
     }
 }
