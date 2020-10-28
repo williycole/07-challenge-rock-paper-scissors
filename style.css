@@ -1,4 +1,4 @@
-/*******************************************
+/* ******************************************
  *******************************************
  *
  *
@@ -18,7 +18,7 @@
  * 03.index.hmtl
  * 04.gameover.html
  * 05.youwon.html
- * 06.
+ * 06.ninjawins.html
 /*****************************
  *   00. common & reset css
  *****************************
@@ -70,8 +70,6 @@ button:hover, #scroll-hamburger-menu:hover {
     transform: scale(1.1);
     transition: all .3s ease-in-out;
 }
-
-#scoreboard-and-game-wrapper{
     padding-top: 3rem;
 }
 
@@ -525,13 +523,38 @@ nav {
  *****************************
  *
  */
- #you-won-main {
+#you-won-main {
     display: flex;
     flex-direction:column;
 }
 #trophy {
     position: absolute;
     padding-bottom: 60rem;
+    width: 25rem;
+}
+
+.gameover-a {
+    color: var(--honey-yellow);
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#play-again:hover {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+/*****************************
+ *    05.ninjawins.html
+ *****************************
+ *
+ */
+ #you-won-main {
+    display: flex;
+    flex-direction:column;
+}
+#ninja {
+    position: absolute;
+    padding-top: 130rem;
     width: 25rem;
 }
 
