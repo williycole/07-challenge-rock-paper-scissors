@@ -12,9 +12,18 @@
 
 <body>
     <main>
-        <h1>You Won</h1>
-    </main>
-    <script src="script.js"></script>
+        <button id="play-again"><a href="rpggame.html" class="gameover-a">Play Again?</a></button>
+        <img src="./pictures/misc/noun_win_986988.svg" id="trophy">
+    </main id="you-won-main">
+    <script>
+        let loadTrophy = document.querySelector('#trophy');
+        window.onload = function trophy() {
+            loadTrophy.style.transition = "all .5s ease-in-out";
+            loadTrophy.style.paddingBottom = "0rem";
+            loadTrophy.style.display = "flex";
+            loadTrophy.style.paddingTop = "50rem";
+        }
+    </script>
 </body>
 
 </html>
