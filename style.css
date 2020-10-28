@@ -16,7 +16,7 @@
  * 01.nav & game directions
  * 02.game text, scoreboard, round alert, & user Login
  * 03.index.hmtl
- * 04.
+ * 04.gameover.html
  * 05.
  * 06.
  * 07.
@@ -483,4 +483,39 @@ nav {
     border: .2rem solid var(--prussian-blue);
     background-color:var(--jet) ;
     text-transform: uppercase;
+}
+
+/*****************************
+ *    04.gameover.html
+ *****************************
+ *
+ */
+#game-over-main {
+    display: flex;
+    flex-direction:column;
+}
+#tomb-stone {
+    position: absolute;
+    padding-bottom: 30rem;
+    width: 50%;
+}
+
+#play-again {
+ margin-top: 5rem;
+ margin-bottom: 5rem;
+ border: .2rem solid var(--prussian-blue);
+ background-color:var(--jet) ;
+ width: 15rem;
+ z-index: 2;
+}
+
+.gameover-a {
+    color: var(--honey-yellow);
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+#play-again:hover {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
 }
